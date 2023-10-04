@@ -54,15 +54,7 @@ public class GameStateControllerAi : MonoBehaviour
         player1Name = player1InputField.text;
         player2Name = player2InputField.text;
     }
-    /* private void Update()
-     {
-         if (enableAutoPlay && playerTurn == "O")
-         {
-             // Automatically make the first move for the AI player
-             AutoPlay();
-         }
-     }*/
-   
+ 
 
     /// <summary>
     /// Called at the end of every turn to check for win conditions
@@ -79,6 +71,7 @@ public class GameStateControllerAi : MonoBehaviour
         moveCount++;
         if (!endGameState.activeSelf && moveCount < 9)
         {
+
             // Introduce a delay before AI's move
             Invoke("AutoPlay", 0.5f); // 1 second delay before AutoPlay method is called
 
