@@ -81,6 +81,11 @@ public class GameStateControllerAi : MonoBehaviour
         {
             // Introduce a delay before AI's move
             Invoke("AutoPlay", 0.5f); // 1 second delay before AutoPlay method is called
+
+        }
+        if (!enableAutoPlay && playerTurn == "O")
+        {
+            return;
         }
         if (tileList[0].text == playerTurn && tileList[1].text == playerTurn && tileList[2].text == playerTurn) GameOver(playerTurn);
         else if (tileList[3].text == playerTurn && tileList[4].text == playerTurn && tileList[5].text == playerTurn) GameOver(playerTurn);
@@ -198,13 +203,14 @@ public class GameStateControllerAi : MonoBehaviour
         playerTurn = (playerTurn == "X") ? "O" : "X";
         if (playerTurn == "X")
         {
-            ToggleButtonState(true);
+
             playerXIcon.color = activePlayerColor;
             playerOIcon.color = inactivePlayerColor;
         }
         else
         {
-            ToggleButtonState(false);
+            playerXIcon.color = inactivePlayerColor;
+            playerOIcon.color = activePlayerColor;
         }
     }
 
