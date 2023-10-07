@@ -18,6 +18,10 @@ public class SM : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
+    public void Menu()
+    {
+        SceneManager.LoadScene(0);
+    }
     // Update is called once per frame
     void Update()
     {
