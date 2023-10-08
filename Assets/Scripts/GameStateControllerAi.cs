@@ -11,7 +11,7 @@ public class GameStateControllerAi : MonoBehaviour
     public Image playerOIcon;                                        // Reference to the playerO icon
     public InputField player1InputField;                             // Reference to P1 input field
     public InputField player2InputField;                             // Refernece to P2 input field
-    public Text winnerText;                                          // Displays the winners name
+/*    public Text winnerText;*/                                          // Displays the winners name
 
     [Header("Misc References")]
     public GameObject endGameState;                                  // Game footer container + winner text
@@ -34,13 +34,20 @@ public class GameStateControllerAi : MonoBehaviour
     private int moveCount;                                           // Internal move counter
 
 
+    public GameObject Win;
+    public GameObject Lose;
+    public GameObject Draw;
+
+    public AdmobBigAd ads;
 
     /// <summary>
     /// Start is called on the first active frame
     /// </summary>
     private void Start()
     {
-
+        Win.SetActive(false);
+        Lose.SetActive(false);
+        Draw.SetActive(false);
         // Set the internal tracker of whos turn is first and setup UI icon feedback for whos turn it is
         playerTurn = whoPlaysFirst;
         if (playerTurn == "X") playerOIcon.color = inactivePlayerColor;
@@ -68,7 +75,10 @@ public class GameStateControllerAi : MonoBehaviour
     /// </summary>
     public void EndTurn()
     {
+      
         moveCount++;
+
+
         if (!endGameState.activeSelf && moveCount < 9)
         {
 
@@ -76,6 +86,7 @@ public class GameStateControllerAi : MonoBehaviour
             Invoke("AutoPlay", 0.5f); // 1 second delay before AutoPlay method is called
 
         }
+
         if (!enableAutoPlay && playerTurn == "O")
         {
             return;
@@ -122,6 +133,7 @@ public class GameStateControllerAi : MonoBehaviour
 
             tileList[randomIndex].GetComponentInParent<Button>().onClick.Invoke();
         }
+     
     }
 
     // Find a winning move for the AI
@@ -216,13 +228,19 @@ public class GameStateControllerAi : MonoBehaviour
         switch (winningPlayer)
         {
             case "D":
-                winnerText.text = "DRAW";
+                ads.LoadInterstitialAd();
+                Draw.SetActive(true);
+              /*  winnerText.text = "DRAW";*/
                 break;
             case "X":
-                winnerText.text = player1Name + " Win";
+                ads.LoadInterstitialAd();
+                Win.SetActive(true);
+               /* winnerText.text = player1Name + " Win";*/
                 break;
             case "O":
-                winnerText.text = player2Name + " Win";
+                ads.LoadInterstitialAd();
+                Lose.SetActive(true);
+                /*winnerText.text = player2Name + " Win";*/
                 break;
         }
         endGameState.SetActive(true);
@@ -257,6 +275,7 @@ public class GameStateControllerAi : MonoBehaviour
             tileList[i].GetComponentInParent<Button>().interactable = state;
         }
     }
+
 
     /// <summary>
     /// Returns the current players turn (X / O)

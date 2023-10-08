@@ -30,7 +30,7 @@ public class GameStateController : MonoBehaviour
     private string player2Name;                                      // Player2 display name
     private int moveCount;                                           // Internal move counter
 
-
+    public AdmobBigAd ads;
 
     /// <summary>
     /// Start is called on the first active frame
@@ -106,12 +106,15 @@ public class GameStateController : MonoBehaviour
         switch (winningPlayer)
         {
             case "D":
+                ads.LoadInterstitialAd();
                 winnerText.text = "DRAW";
                 break;
             case "X":
+                ads.LoadInterstitialAd();
                 winnerText.text = player1Name + " Win";
                 break;
             case "O":
+                ads.LoadInterstitialAd();
                 winnerText.text = player2Name + " Win";
                 break;
         }
