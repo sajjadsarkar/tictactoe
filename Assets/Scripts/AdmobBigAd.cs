@@ -6,7 +6,7 @@ public class AdmobBigAd : MonoBehaviour
 {
     // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
-    private string _adUnitId = "ca-app-pub-6941335252611672/4207392957";
+    private string _adUnitId = "ca-app-pub-3940493859365654/9351914904";
 #elif UNITY_IPHONE
   private string _adUnitId = "ca-app-pub-3940256099942544/4411468910";
 #else
@@ -91,7 +91,7 @@ public class AdmobBigAd : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Interstitial ad is not ready yet.");
+            
         }
     }
 }

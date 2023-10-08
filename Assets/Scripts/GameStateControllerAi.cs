@@ -40,6 +40,8 @@ public class GameStateControllerAi : MonoBehaviour
 
     public AdmobBigAd ads;
 
+
+    private bool isPlayerInputEnabled = true;
     /// <summary>
     /// Start is called on the first active frame
     /// </summary>
@@ -83,7 +85,7 @@ public class GameStateControllerAi : MonoBehaviour
         {
 
             // Introduce a delay before AI's move
-            Invoke("AutoPlay", 0.5f); // 1 second delay before AutoPlay method is called
+            Invoke("AutoPlay", 0.1f); // 1 second delay before AutoPlay method is called
 
         }
 
