@@ -570,6 +570,90 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269154389}
   m_CullTransparentMesh: 1
+--- !u!1001 &283552823
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1782856319915733984, guid: 1b55fbb1306c90d428c4388e7e5995c8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782856319915733984, guid: 1b55fbb1306c90d428c4388e7e5995c8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782856319915733984, guid: 1b55fbb1306c90d428c4388e7e5995c8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782856319915733984, guid: 1b55fbb1306c90d428c4388e7e5995c8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782856319915733984, guid: 1b55fbb1306c90d428c4388e7e5995c8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782856319915733984, guid: 1b55fbb1306c90d428c4388e7e5995c8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782856319915733984, guid: 1b55fbb1306c90d428c4388e7e5995c8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782856319915733984, guid: 1b55fbb1306c90d428c4388e7e5995c8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782856319915733984, guid: 1b55fbb1306c90d428c4388e7e5995c8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782856319915733984, guid: 1b55fbb1306c90d428c4388e7e5995c8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782856319915733984, guid: 1b55fbb1306c90d428c4388e7e5995c8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3648073334526341478, guid: 1b55fbb1306c90d428c4388e7e5995c8,
+        type: 3}
+      propertyPath: m_Name
+      value: ButtonSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906063148583862433, guid: 1b55fbb1306c90d428c4388e7e5995c8,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1b55fbb1306c90d428c4388e7e5995c8, type: 3}
+--- !u!82 &283552824 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4906063148583862433, guid: 1b55fbb1306c90d428c4388e7e5995c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 283552823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &335362710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3236,6 +3320,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 283552824}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1718621728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3784,6 +3880,18 @@ MonoBehaviour:
       - m_Target: {fileID: 106091128}
         m_TargetAssemblyTypeName: GameStateControllerAi, Assembly-CSharp
         m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 283552824}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
