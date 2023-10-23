@@ -32,6 +32,9 @@ public class GameStateController : MonoBehaviour
 
     public AdmobBigAd ads;
 
+    public AudioSource XSound;
+    public AudioSource OSound;
+
     /// <summary>
     /// Start is called on the first active frame
     /// </summary>
@@ -63,6 +66,14 @@ public class GameStateController : MonoBehaviour
     /// </summary>
     public void EndTurn()
     {
+        if (playerTurn == "X")
+        {
+            XSound.Play();
+        }
+        else if (playerTurn == "O")
+        {
+            OSound.Play();
+        }
         moveCount++;
         if (tileList[0].text == playerTurn && tileList[1].text == playerTurn && tileList[2].text == playerTurn) GameOver(playerTurn);
         else if (tileList[3].text == playerTurn && tileList[4].text == playerTurn && tileList[5].text == playerTurn) GameOver(playerTurn);
