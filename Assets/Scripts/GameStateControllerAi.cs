@@ -232,16 +232,22 @@ public class GameStateControllerAi : MonoBehaviour
             case "D":
                 ads.LoadInterstitialAd();
                 Draw.SetActive(true);
-              /*  winnerText.text = "DRAW";*/
+                Win.SetActive(false);
+                Lose.SetActive(false);
+                /*  winnerText.text = "DRAW";*/
                 break;
             case "X":
                 ads.LoadInterstitialAd();
                 Win.SetActive(true);
-               /* winnerText.text = player1Name + " Win";*/
+                Draw.SetActive(false);
+                Lose.SetActive(false);
+                /* winnerText.text = player1Name + " Win";*/
                 break;
             case "O":
                 ads.LoadInterstitialAd();
                 Lose.SetActive(true);
+                Win.SetActive(false);
+                Draw.SetActive(false);
                 /*winnerText.text = player2Name + " Win";*/
                 break;
         }
