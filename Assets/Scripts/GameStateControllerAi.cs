@@ -40,6 +40,9 @@ public class GameStateControllerAi : MonoBehaviour
 
     public AdmobBigAd ads;
 
+    public AudioSource XSound;
+    public AudioSource OSound;
+
 
     private bool isPlayerInputEnabled = true;
     /// <summary>
@@ -79,11 +82,18 @@ public class GameStateControllerAi : MonoBehaviour
     {
       
         moveCount++;
-
+       
 
         if (!endGameState.activeSelf && moveCount < 9)
         {
-
+            if (playerTurn == "X")
+            {
+                XSound.Play();
+            }
+            else if (playerTurn == "O")
+            {
+                OSound.Play();
+            }
             // Introduce a delay before AI's move
             Invoke("AutoPlay", 0.1f); // 1 second delay before AutoPlay method is called
 
