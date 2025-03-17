@@ -11,7 +11,7 @@ public class GameStateControllerAi : MonoBehaviour
     public Image playerOIcon;                                        // Reference to the playerO icon
     public InputField player1InputField;                             // Reference to P1 input field
     public InputField player2InputField;                             // Refernece to P2 input field
-/*    public Text winnerText;*/                                          // Displays the winners name
+    /*    public Text winnerText;*/                                          // Displays the winners name
 
     [Header("Misc References")]
     public GameObject endGameState;                                  // Game footer container + winner text
@@ -38,7 +38,7 @@ public class GameStateControllerAi : MonoBehaviour
     public GameObject Lose;
     public GameObject Draw;
 
-    public AdmobBigAd ads;
+
 
     public AudioSource XSound;
     public AudioSource OSound;
@@ -66,7 +66,7 @@ public class GameStateControllerAi : MonoBehaviour
         player1Name = player1InputField.text;
         player2Name = player2InputField.text;
     }
- 
+
 
     /// <summary>
     /// Called at the end of every turn to check for win conditions
@@ -80,9 +80,9 @@ public class GameStateControllerAi : MonoBehaviour
     /// </summary>
     public void EndTurn()
     {
-      
+
         moveCount++;
-       
+
 
         if (!endGameState.activeSelf && moveCount < 9)
         {
@@ -145,7 +145,7 @@ public class GameStateControllerAi : MonoBehaviour
 
             tileList[randomIndex].GetComponentInParent<Button>().onClick.Invoke();
         }
-     
+
     }
 
     // Find a winning move for the AI
@@ -240,21 +240,19 @@ public class GameStateControllerAi : MonoBehaviour
         switch (winningPlayer)
         {
             case "D":
-                ads.LoadInterstitialAd();
+
                 Draw.SetActive(true);
                 Win.SetActive(false);
                 Lose.SetActive(false);
                 /*  winnerText.text = "DRAW";*/
                 break;
             case "X":
-                ads.LoadInterstitialAd();
                 Win.SetActive(true);
                 Draw.SetActive(false);
                 Lose.SetActive(false);
                 /* winnerText.text = player1Name + " Win";*/
                 break;
             case "O":
-                ads.LoadInterstitialAd();
                 Lose.SetActive(true);
                 Win.SetActive(false);
                 Draw.SetActive(false);
